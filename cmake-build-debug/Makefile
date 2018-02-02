@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/mattia/Documenti/Workspace/C/miniKern/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/mattia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4548.31/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/mattia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4548.31/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named miniOS
+# Target rules for targets named miniKern
 
 # Build rule for target.
-miniOS: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 miniOS
-.PHONY : miniOS
+miniKern: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 miniKern
+.PHONY : miniKern
 
 # fast build rule for target.
-miniOS/fast:
-	$(MAKE) -f CMakeFiles/miniOS.dir/build.make CMakeFiles/miniOS.dir/build
-.PHONY : miniOS/fast
+miniKern/fast:
+	$(MAKE) -f CMakeFiles/miniKern.dir/build.make CMakeFiles/miniKern.dir/build
+.PHONY : miniKern/fast
 
 main.o: main.c.o
 
@@ -129,7 +129,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/miniOS.dir/build.make CMakeFiles/miniOS.dir/main.c.o
+	$(MAKE) -f CMakeFiles/miniKern.dir/build.make CMakeFiles/miniKern.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -138,7 +138,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/miniOS.dir/build.make CMakeFiles/miniOS.dir/main.c.i
+	$(MAKE) -f CMakeFiles/miniKern.dir/build.make CMakeFiles/miniKern.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -147,7 +147,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/miniOS.dir/build.make CMakeFiles/miniOS.dir/main.c.s
+	$(MAKE) -f CMakeFiles/miniKern.dir/build.make CMakeFiles/miniKern.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -156,9 +156,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... miniOS"
+	@echo "... rebuild_cache"
+	@echo "... miniKern"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

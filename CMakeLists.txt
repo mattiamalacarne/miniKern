@@ -3,4 +3,4 @@ project(miniOS C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(miniOS main.c)
+add_executable(miniKern main.c)

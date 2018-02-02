@@ -52,5 +52,45 @@ void term_putc(char c) {
             term_row++;
             break;
         }
+        default:
+        {
+            // Caratteri normali vengono stampati a video
+            const size_t index = (VGA_COLS * term_row) + term_col; // Calcolo l'indice del buffer
+            VGA_BUFFER[index] = ((uint16_t)term_color << 8 | c);
+            term_col++;
+            break;
+        }
     }
+
+    // Arrivo all'ultimo spazio disponibile nella riga o nella colonna
+
+    if (term_col >= VGA_COLS) {
+        term_col = 0;
+        term_row++;
+    }
+
+    if (term_row >= VGA_ROWS) {
+        term_row = 0;
+        term_col = 0;
+    }
+}
+
+// Stampo una stringa
+
+void term_print(const char* str) {
+
+    for (size_t i = 0; str[i] != '\0'; i++) {
+        term_putc(str[i]);
+    }
+
+}
+
+// Dichiaro il kernel
+
+void kernel_main() {
+
+    term_init();
+    term_print("minKern: Kernel caricato!\0");
+    term_print("Benvenuto!\0");
+
 }
