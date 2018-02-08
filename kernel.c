@@ -87,6 +87,6 @@ void kernel_main()
 
     term_init();
 
-    kernel_print("miniKern [OK!]\n");
+    kernel_print("miniKern mattia [OK!]\n");
     kernel_print("Welcome!!\n");
 }
