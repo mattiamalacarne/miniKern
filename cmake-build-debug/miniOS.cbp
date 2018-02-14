@@ -78,9 +78,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mattia/Documenti/Workspace/C/miniKern/main.c">
-			<Option target="miniKern"/>
-		</Unit>
 		<Unit filename="/home/mattia/Documenti/Workspace/C/miniKern/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

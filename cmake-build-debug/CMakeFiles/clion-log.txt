@@ -1,4 +1,1 @@
-/home/mattia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4548.31/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/mattia/Documenti/Workspace/C/miniKern
--- Configuring done
--- Generating done
--- Build files have been written to: /home/mattia/Documenti/Workspace/C/miniKern/cmake-build-debug
+CMakeLists.txt not found in /home/mattia/Documenti/Workspace/C/miniKern
